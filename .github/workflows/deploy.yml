@@ -43,14 +43,19 @@ jobs:
 
       - name: Package application
         run: |
-          tar --exclude='.git' --exclude='node_modules' -czf clouddesk.tar.gz .
+          tar \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='.env' \
+            --exclude='.env.*' \
+            -czf "$RUNNER_TEMP/clouddesk.tar.gz" .
 
       - name: Copy application to EC2
         env:
           EC2_HOST: ${{ secrets.EC2_HOST }}
           EC2_USER: ${{ secrets.EC2_USER }}
         run: |
-          scp -i ~/.ssh/ec2_key clouddesk.tar.gz \
+          scp -i ~/.ssh/ec2_key "$RUNNER_TEMP/clouddesk.tar.gz" \
             "$EC2_USER@$EC2_HOST:/tmp/clouddesk.tar.gz"
 
       - name: Deploy application
