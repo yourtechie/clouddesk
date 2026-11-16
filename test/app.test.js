@@ -26,7 +26,7 @@ test("dashboard page is served", async () => {
 
     assert.equal(response.status, 200);
     assert.match(html, /CloudDesk/);
-    assert.match(html, /Infrastructure overview/);
+    assert.match(html, /CloudDesk is Live!/);
   } finally {
     await new Promise((resolve) => server.close(resolve));
   }
