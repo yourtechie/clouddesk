@@ -29,3 +29,5 @@ npm run build
 npm start
 ```
 The EC2 deployment uses PM2 to keep the application running and Nginx as a reverse proxy.
+
+First Test
