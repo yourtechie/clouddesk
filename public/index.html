@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="CloudDesk cloud infrastructure overview dashboard">
+  <title>CloudDesk — Infrastructure Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16.5 12 4l7 12.5H5Z"/><path d="M8.5 16.5 12 10l3.5 6.5"/></svg></span>
+        <span>cloud<span class="brand-light">desk</span></span>
+      </a>
+      <div class="workspace">
+        <div class="workspace-icon">N</div>
+        <div><strong>Northstar Labs</strong><small>Starter workspace</small></div>
+        <span class="chevron">⌄</span>
+      </div>
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="nav-item active" href="#overview"><span class="nav-icon">▦</span> Overview</a>
+        <a class="nav-item" href="#resources"><span class="nav-icon">◫</span> Resources <span class="nav-count">8</span></a>
+        <a class="nav-item" href="#activity"><span class="nav-icon">↗</span> Deployments</a>
+        <a class="nav-item" href="#health"><span class="nav-icon">♡</span> Health checks</a>
+      </nav>
+      <p class="nav-label nav-label-lower">PREFERENCES</p>
+      <nav class="navigation">
+        <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span> Settings</a>
+        <a class="nav-item" href="#help"><span class="nav-icon">?</span> Help center</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <div class="upgrade-spark">✦</div>
+          <strong>Your cloud, in focus.</strong>
+          <p>One clear view of your infrastructure and deployments.</p>
+          <a href="#resources">Explore resources <span>→</span></a>
+        </div>
+        <div class="profile">
+          <div class="avatar">JD</div>
+          <div><strong>Jordan Davis</strong><small>Workspace admin</small></div>
+          <span class="more">···</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong>Overview</strong></div>
+        <div class="top-actions">
+          <span class="environment"><i></i> Production</span>
+          <button class="icon-button" aria-label="Notifications">♧<b></b></button>
+          <div class="top-avatar">JD</div>
+        </div>
+      </header>
+
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">MONDAY, OCTOBER 20, 2025</p>
+          <h1>Infrastructure overview<span>.</span></h1>
+          <p class="subtitle">Here's what's happening across your cloud environment.</p>
+        </div>
+        <button class="primary-button" id="refreshButton"><span>↻</span> Refresh data</button>
+      </section>
+
+      <section class="welcome-banner">
+        <div class="welcome-copy">
+          <div class="live-label"><i></i> ALL SYSTEMS MONITORED</div>
+          <h2>Your infrastructure.<br><em>One clear view.</em></h2>
+          <p>Stay on top of your cloud resources, deployments and service health from one place.</p>
+          <a href="#resources" class="banner-link">Explore infrastructure <span>→</span></a>
+        </div>
+        <div class="orbit-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="orbit-core"><span>✦</span></div>
+          <div class="orbit-dot dot-one"></div><div class="orbit-dot dot-two"></div><div class="orbit-dot dot-three"></div>
+          <div class="orbit-caption">CLOUD<br>NETWORK</div>
+        </div>
+        <div class="banner-index">01 <span>/ 04</span></div>
+      </section>
+
+      <section class="section-heading" id="resources">
+        <div><h3>At a glance</h3><p>Your infrastructure metrics, updated just now.</p></div>
+        <span class="period-select">Last 24 hours&nbsp;⌄</span>
+      </section>
+
+      <section class="metric-grid">
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon purple">▣</span><span class="metric-trend positive">↗ 12.5%</span></div>
+          <p class="metric-label">Active instances</p><div class="metric-value" id="instancesValue">08 <small>/ 10</small></div>
+          <div class="mini-bars bars-purple"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="metric-foot">Across 3 availability zones</p>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon mint">♡</span><span class="metric-trend positive">Healthy</span></div>
+          <p class="metric-label">Service availability</p><div class="metric-value">99.98<small>%</small></div>
+          <div class="progress-track"><span style="width:99.98%"></span></div>
+          <p class="metric-foot">Within your 99.9% SLA target</p>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon orange">⇧</span><span class="metric-trend positive">↗ 8.2%</span></div>
+          <p class="metric-label">Deployments today</p><div class="metric-value" id="deploymentsValue">12</div>
+          <div class="mini-bars bars-orange"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="metric-foot">2 more than yesterday</p>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon blue">⌁</span><span class="metric-trend neutral">Stable</span></div>
+          <p class="metric-label">Network traffic</p><div class="metric-value">2.4 <small>GB</small></div>
+          <div class="traffic-line"><svg viewBox="0 0 220 35" preserveAspectRatio="none"><path d="M0 27 C15 25 15 12 30 18 S48 29 63 17 S80 7 95 14 S115 25 130 12 S148 18 163 9 S188 17 200 5 S212 9 220 3" fill="none" stroke="#5b8def" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <p class="metric-foot">Inbound + outbound today</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel deployment-panel" id="activity">
+          <div class="panel-heading"><div><h3>Recent deployments</h3><p>Track the latest changes to your environment.</p></div><a href="#activity">View all <span>→</span></a></div>
+          <div class="deployment-list">
+            <div class="deployment-row"><div class="deploy-symbol violet">↗</div><div class="deploy-info"><strong>web-frontend <span class="tag production-tag">production</span></strong><small>Deployed by Jordan Davis · 18 min ago</small></div><span class="status-pill success"><i></i> Successful</span></div>
+            <div class="deployment-row"><div class="deploy-symbol blue-symbol">⌘</div><div class="deploy-info"><strong>api-gateway <span class="tag staging-tag">staging</span></strong><small>Deployed by CI pipeline · 1 hour ago</small></div><span class="status-pill success"><i></i> Successful</span></div>
+            <div class="deployment-row"><div class="deploy-symbol orange-symbol">◇</div><div class="deploy-info"><strong>worker-service <span class="tag production-tag">production</span></strong><small>Deployed by Alex Morgan · 3 hours ago</small></div><span class="status-pill pending"><i></i> In progress</span></div>
+            <div class="deployment-row"><div class="deploy-symbol green-symbol">⌁</div><div class="deploy-info"><strong>database-migration <span class="tag staging-tag">staging</span></strong><small>Deployed by CI pipeline · Yesterday</small></div><span class="status-pill success"><i></i> Successful</span></div>
+          </div>
+        </article>
+
+        <article class="panel health-panel" id="health">
+          <div class="panel-heading"><div><h3>Service health</h3><p>Live application status</p></div><span class="health-live"><i></i> Live</span></div>
+          <div class="health-score"><div class="health-ring"><div><strong>99.98<span>%</span></strong><small>UPTIME</small></div></div></div>
+          <div class="health-details"><span><i class="legend-dot green-dot"></i> Operational</span><strong>7 services</strong></div>
+          <div class="health-details"><span><i class="legend-dot amber-dot"></i> Degraded</span><strong>1 service</strong></div>
+          <div class="health-footer"><span>API connection</span><strong id="apiStatus"><i></i> Checking...</strong></div>
+        </article>
+      </section>
+
+      <footer class="footer"><span>© 2025 CloudDesk. Built for clearer cloud operations.</span><span>System status <i></i> Operational</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status">Dashboard data refreshed.</div>
+  <script src="/app.js"></script>
+</body>
+</html>
